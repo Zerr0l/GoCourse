@@ -1,9 +1,9 @@
 package main
 
 import (
-	"awesomeProject/accounts"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
+	"hw2/accounts"
 )
 
 func main() {

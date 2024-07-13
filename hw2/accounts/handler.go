@@ -1,9 +1,9 @@
 package accounts
 
 import (
-	"awesomeProject/accounts/dto"
-	"awesomeProject/accounts/models"
 	"github.com/labstack/echo/v4"
+	"hw2/accounts/dto"
+	"hw2/accounts/models"
 	"net/http"
 	"sync"
 )
@@ -52,6 +52,9 @@ func (h *Handler) CreateAccount(c echo.Context) error {
 
 func (h *Handler) GetAccount(c echo.Context) error {
 	name := c.QueryParams().Get("name") // {"name": "alice"}
+	if len(name) == 0 {
+		return c.String(http.StatusBadRequest, "empty name")
+	}
 
 	h.guard.RLock()
 
@@ -109,7 +112,7 @@ func (h *Handler) ChangeAccountAmount(c echo.Context) error {
 	}
 
 	if len(request.Name) == 0 {
-		return c.String(http.StatusBadRequest, "empty previous name")
+		return c.String(http.StatusBadRequest, "empty name")
 	}
 
 	h.guard.Lock()

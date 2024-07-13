@@ -1,11 +1,11 @@
 package main
 
 import (
-	"awesomeProject/accounts/dto"
 	"bytes"
 	"encoding/json"
 	"flag"
 	"fmt"
+	"hw2/accounts/dto"
 	"io"
 	"net/http"
 )
