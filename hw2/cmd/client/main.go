@@ -211,7 +211,7 @@ func (cmd *Command) changeAmount() error {
 }
 
 func main() {
-	portVal := flag.Int("port", 8080, "server port")
+	portVal := flag.Int("port", 1323, "server port")
 	hostVal := flag.String("host", "0.0.0.0", "server host")
 	cmdVal := flag.String("cmd", "", "command to execute")
 	nameVal := flag.String("name", "", "name of account")
